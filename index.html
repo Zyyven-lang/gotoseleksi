@@ -186,9 +186,27 @@
       box-shadow: 0 8px 30px rgba(168, 85, 247, 0.3);
     }
 
-    .banner-wrapper {
+    /* ===== EVENT SECTION ===== */
+    .event-section {
       max-width: 600px;
       margin: 30px auto 0;
+      text-align: center;
+    }
+
+    .event-section .event-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #a855f7;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+    }
+
+    .event-section .event-title i {
+      margin-right: 8px;
+    }
+
+    .banner-wrapper {
+      width: 100%;
       border-radius: 24px;
       overflow: hidden;
       border: 1px solid rgba(168, 85, 247, 0.08);
@@ -207,6 +225,34 @@
       display: block;
     }
 
+    .event-desc {
+      margin-top: 14px;
+      font-size: 0.9rem;
+      color: #9ca3af;
+      line-height: 1.6;
+    }
+
+    .event-desc i {
+      color: #a855f7;
+      margin-right: 4px;
+    }
+
+    .event-desc .highlight {
+      color: #e5e7eb;
+      font-weight: 600;
+    }
+
+    .event-hadiah {
+      margin-top: 10px;
+      font-size: 0.9rem;
+      color: #a855f7;
+      font-weight: 600;
+    }
+
+    .event-hadiah i {
+      margin-right: 6px;
+    }
+
     .event-content {
       max-width: 600px;
       margin: 0 auto;
@@ -222,7 +268,7 @@
       margin-top: 20px;
     }
 
-    .event-content .event-card .event-title {
+    .event-content .event-card .event-title-big {
       font-size: 1.6rem;
       font-weight: 800;
       background: linear-gradient(135deg, #a855f7, #7c3aed);
@@ -484,9 +530,25 @@
           <i class="fas fa-arrow-right"></i> DAFTAR SEKARANG
         </button>
 
-        <!-- BANNER PNG -->
-        <div class="banner-wrapper" onclick="showPage('eventPage')">
-          <img src="zyyven.png" alt="Zyyven Banner">
+        <!-- EVENT SECTION -->
+        <div class="event-section">
+          <div class="event-title">
+            <i class="fas fa-calendar-alt"></i> Event Tersedia Zyyven
+          </div>
+
+          <div class="banner-wrapper" onclick="showPage('eventPage')">
+            <img src="zyyven.png" alt="Zyyven Banner">
+          </div>
+
+          <div class="event-desc">
+            <i class="fas fa-info-circle"></i>
+            Event ini dibuat untuk merayakan Grand Opening Zyyven. 
+            <span class="highlight">Klik banner untuk detail lebih lanjut.</span>
+          </div>
+
+          <div class="event-hadiah">
+            <i class="fas fa-gift"></i> Hadiah: AM Premium
+          </div>
         </div>
       </div>
     </div>
@@ -521,7 +583,7 @@
       <div class="back-link" onclick="showPage('homePage')"><i class="fas fa-arrow-left"></i> Kembali</div>
     </div>
 
-    <!-- EVENT -->
+    <!-- EVENT PAGE -->
     <div id="eventPage" class="page">
       <div class="page-header">
         <h2>Event Zyyven</h2>
@@ -529,7 +591,7 @@
       </div>
       <div class="event-content">
         <div class="event-card">
-          <div class="event-title"><i class="fas fa-fire"></i> Grand Opening Zyyven</div>
+          <div class="event-title-big"><i class="fas fa-fire"></i> Grand Opening Zyyven</div>
           <div class="event-detail">
             <p><i class="fas fa-calendar-alt"></i> <span class="label">Tanggal:</span> 2 September 2026</p>
             <p><i class="fas fa-clock"></i> <span class="label">Waktu:</span> 19.00 WIB - Selesai</p>
@@ -541,7 +603,7 @@
             </p>
             <p style="margin-top: 12px;">
               <i class="fas fa-gift"></i> <span class="label">Hadiah:</span>
-              Diamond FF 1000 (3 pemenang) | Stiker eksklusif Zyyven (10 pemenang) | Role khusus di grup
+              AM Premium (untuk 5 pemenang) | Role khusus di grup
             </p>
           </div>
           <div class="publisher">
