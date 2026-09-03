@@ -43,12 +43,8 @@
     }
 
     @keyframes purpleFloat {
-      0% {
-        transform: translate(0, 0) scale(1) rotate(0deg);
-      }
-      100% {
-        transform: translate(40px, 30px) scale(1.06) rotate(2deg);
-      }
+      0% { transform: translate(0,0) scale(1) rotate(0deg); }
+      100% { transform: translate(40px,30px) scale(1.06) rotate(2deg); }
     }
 
     .container {
@@ -111,14 +107,8 @@
     }
 
     @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     .hero {
@@ -135,13 +125,8 @@
     }
 
     @keyframes floatZyyven {
-      0%,
-      100% {
-        transform: translateY(0);
-      }
-      50% {
-        transform: translateY(-10px);
-      }
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
     }
 
     .hero h1 {
@@ -201,137 +186,78 @@
       box-shadow: 0 8px 30px rgba(168, 85, 247, 0.3);
     }
 
-    /* ===== EVENT BANNER ===== */
-    .event-banner {
+    /* ===== BANNER ===== */
+    .banner-wrapper {
       max-width: 600px;
       margin: 30px auto 0;
-      background: linear-gradient(135deg, rgba(168, 85, 247, 0.08), rgba(124, 58, 237, 0.04));
-      border: 1px solid rgba(168, 85, 247, 0.1);
       border-radius: 24px;
-      padding: 20px 24px;
+      overflow: hidden;
+      border: 1px solid rgba(168, 85, 247, 0.08);
       cursor: pointer;
       transition: 0.3s;
-      text-align: left;
-      display: flex;
-      align-items: center;
-      gap: 16px;
     }
 
-    .event-banner:hover {
-      border-color: rgba(168, 85, 247, 0.25);
+    .banner-wrapper:hover {
+      border-color: rgba(168, 85, 247, 0.2);
       transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(168, 85, 247, 0.04);
     }
 
-    .event-banner .event-icon {
-      font-size: 2rem;
-      color: #a855f7;
-      flex-shrink: 0;
-    }
-
-    .event-banner .event-info {
-      flex: 1;
-    }
-
-    .event-banner .event-title {
-      font-weight: 700;
-      font-size: 1.1rem;
-      color: #e5e7eb;
-    }
-
-    .event-banner .event-desc {
-      font-size: 0.8rem;
-      color: #9ca3af;
-      margin-top: 2px;
-    }
-
-    .event-banner .event-arrow {
-      color: #a855f7;
-      font-size: 1.2rem;
-    }
-
-    /* ===== MODAL EVENT ===== */
-    .event-modal {
-      position: fixed;
-      top: 0;
-      left: 0;
+    .banner-wrapper img {
       width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.7);
+      height: auto;
+      display: block;
+    }
+
+    /* ===== EVENT PAGE ===== */
+    .event-content {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .event-content .event-card {
+      background: rgba(255, 255, 255, 0.03);
       backdrop-filter: blur(8px);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      z-index: 1000;
-    }
-
-    .event-modal.show {
-      display: flex;
-    }
-
-    .event-modal-content {
-      max-width: 520px;
-      width: 90%;
-      background: #1a1a2e;
       border-radius: 24px;
       padding: 30px;
-      border: 1px solid rgba(168, 85, 247, 0.1);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
-      animation: modalIn 0.3s ease;
+      border: 1px solid rgba(168, 85, 247, 0.06);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      margin-top: 20px;
     }
 
-    @keyframes modalIn {
-      from {
-        opacity: 0;
-        transform: scale(0.95) translateY(10px);
-      }
-      to {
-        opacity: 1;
-        transform: scale(1) translateY(0);
-      }
-    }
-
-    .event-modal-content .modal-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 16px;
-    }
-
-    .event-modal-content .modal-header h3 {
-      font-size: 1.4rem;
-      font-weight: 700;
+    .event-content .event-card .event-title {
+      font-size: 1.6rem;
+      font-weight: 800;
       background: linear-gradient(135deg, #a855f7, #7c3aed);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
-    }
-
-    .event-modal-content .modal-close {
-      font-size: 1.5rem;
-      color: #6b7280;
-      cursor: pointer;
-      transition: 0.2s;
-    }
-
-    .event-modal-content .modal-close:hover {
-      color: #e5e7eb;
-    }
-
-    .event-modal-content .modal-body p {
-      color: #9ca3af;
-      line-height: 1.8;
       margin-bottom: 12px;
     }
 
-    .event-modal-content .modal-body .publisher {
-      font-size: 0.8rem;
-      color: #6b7280;
-      border-top: 1px solid rgba(168, 85, 247, 0.06);
-      padding-top: 12px;
+    .event-content .event-card .event-detail {
+      color: #9ca3af;
+      line-height: 1.8;
     }
 
-    .event-modal-content .modal-body .publisher i {
+    .event-content .event-card .event-detail i {
+      color: #a855f7;
+      width: 24px;
+    }
+
+    .event-content .event-card .event-detail .label {
+      font-weight: 600;
+      color: #e5e7eb;
+    }
+
+    .event-content .event-card .publisher {
+      margin-top: 20px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(168, 85, 247, 0.06);
+      font-size: 0.8rem;
+      color: #6b7280;
+    }
+
+    .event-content .event-card .publisher i {
       color: #a855f7;
       margin-right: 6px;
     }
@@ -507,9 +433,7 @@
     }
 
     @keyframes spin {
-      to {
-        transform: rotate(360deg);
-      }
+      to { transform: rotate(360deg); }
     }
 
     .loading-text {
@@ -519,30 +443,14 @@
     }
 
     @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 2.6rem;
-      }
-      .hero .logo-icon {
-        font-size: 3rem;
-      }
+      .hero h1 { font-size: 2.6rem; }
+      .hero .logo-icon { font-size: 3rem; }
     }
 
     @media (max-width: 480px) {
-      .navbar {
-        flex-direction: column;
-        align-items: center;
-      }
-      .hero h1 {
-        font-size: 2rem;
-      }
-      .about-stats {
-        gap: 20px;
-        flex-wrap: wrap;
-      }
-      .event-banner {
-        flex-direction: column;
-        text-align: center;
-      }
+      .navbar { flex-direction: column; align-items: center; }
+      .hero h1 { font-size: 2rem; }
+      .about-stats { gap: 20px; flex-wrap: wrap; }
     }
   </style>
 </head>
@@ -558,6 +466,7 @@
       <div class="nav-links">
         <a href="#" class="active" onclick="showPage('homePage')">Home</a>
         <a href="#" onclick="showPage('aboutPage')">Tentang</a>
+        <a href="#" onclick="showPage('eventPage')">Event</a>
         <a href="#" onclick="showPage('seleksiPage')">Seleksi</a>
       </div>
     </div>
@@ -577,14 +486,9 @@
           <i class="fas fa-arrow-right"></i> DAFTAR SEKARANG
         </button>
 
-        <!-- EVENT BANNER -->
-        <div class="event-banner" onclick="openEventModal()">
-          <div class="event-icon"><i class="fas fa-calendar-alt"></i></div>
-          <div class="event-info">
-            <div class="event-title">🔥 Event Grand Opening Zyyven</div>
-            <div class="event-desc">Klik untuk detail event & hadiah menarik!</div>
-          </div>
-          <div class="event-arrow"><i class="fas fa-chevron-right"></i></div>
+        <!-- BANNER -->
+        <div class="banner-wrapper" onclick="showPage('eventPage')">
+          <img src="zyyven.jpg" alt="Zyyven Banner">
         </div>
       </div>
     </div>
@@ -619,6 +523,37 @@
       <div class="back-link" onclick="showPage('homePage')"><i class="fas fa-arrow-left"></i> Kembali</div>
     </div>
 
+    <!-- EVENT -->
+    <div id="eventPage" class="page">
+      <div class="page-header">
+        <h2>Event Zyyven</h2>
+        <p>Grand Opening & Kegiatan Seru</p>
+      </div>
+      <div class="event-content">
+        <div class="event-card">
+          <div class="event-title"><i class="fas fa-fire"></i> Grand Opening Zyyven</div>
+          <div class="event-detail">
+            <p><i class="fas fa-calendar-alt"></i> <span class="label">Tanggal:</span> 2 September 2026</p>
+            <p><i class="fas fa-clock"></i> <span class="label">Waktu:</span> 19.00 WIB - Selesai</p>
+            <p><i class="fas fa-map-pin"></i> <span class="label">Tempat:</span> Grup WhatsApp Zyyven</p>
+            <p style="margin-top: 12px;">
+              <i class="fas fa-info-circle"></i> <span class="label">Deskripsi:</span>
+              Zyyven mengadakan Grand Opening untuk merayakan kelahiran komunitas baru!
+              Acara ini diisi dengan berbagai kegiatan seru, pemberian hadiah menarik, dan sesi perkenalan anggota.
+            </p>
+            <p style="margin-top: 12px;">
+              <i class="fas fa-gift"></i> <span class="label">Hadiah:</span>
+              Diamond FF 1000 (3 pemenang) | Stiker eksklusif Zyyven (10 pemenang) | Role khusus di grup
+            </p>
+          </div>
+          <div class="publisher">
+            <i class="fas fa-user-edit"></i> Publisher: Raulcoopys (Handler Web)
+          </div>
+        </div>
+        <div class="back-link" onclick="showPage('homePage')"><i class="fas fa-arrow-left"></i> Kembali ke Beranda</div>
+      </div>
+    </div>
+
     <!-- SELEKSI -->
     <div id="seleksiPage" class="page">
       <div class="page-header">
@@ -646,35 +581,6 @@
     <div class="credit"><i class="fas fa-copyright"></i> 2026 • Zyyven</div>
   </div>
 
-  <!-- EVENT MODAL -->
-  <div id="eventModal" class="event-modal">
-    <div class="event-modal-content">
-      <div class="modal-header">
-        <h3><i class="fas fa-fire"></i> Grand Opening Zyyven</h3>
-        <span class="modal-close" onclick="closeEventModal()">&times;</span>
-      </div>
-      <div class="modal-body">
-        <p>
-          <strong>📅 Tanggal:</strong> 2 September 2026
-        </p>
-        <p>
-          <strong>🎯 Deskripsi:</strong>
-          Zyyven mengadakan Grand Opening untuk merayakan kelahiran komunitas baru!
-          Acara ini diisi dengan berbagai kegiatan seru, pemberian hadiah menarik, dan sesi perkenalan anggota.
-        </p>
-        <p>
-          <strong>🎁 Hadiah:</strong>
-          - Diamond FF 1000 (3 pemenang)
-          - Stiker eksklusif Zyyven (10 pemenang)
-          - Role khusus di grup (untuk semua peserta)
-        </p>
-        <div class="publisher">
-          <i class="fas fa-user-edit"></i> Publisher: Raul (Handler Web)
-        </div>
-      </div>
-    </div>
-  </div>
-
   <!-- LOADING -->
   <div id="loadingOverlay" class="loading-overlay">
     <div class="loading-content">
@@ -694,23 +600,9 @@
       document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
       document.getElementById(id).classList.add('active');
       document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
-      const map = { homePage: 0, aboutPage: 1, seleksiPage: 2 };
+      const map = { homePage: 0, aboutPage: 1, eventPage: 2, seleksiPage: 3 };
       if (map[id] !== undefined) document.querySelectorAll('.nav-links a')[map[id]].classList.add('active');
     }
-
-    // ===== EVENT MODAL =====
-    function openEventModal() {
-      document.getElementById('eventModal').classList.add('show');
-    }
-
-    function closeEventModal() {
-      document.getElementById('eventModal').classList.remove('show');
-    }
-
-    // Tutup modal klik di luar
-    document.getElementById('eventModal').addEventListener('click', function(e) {
-      if (e.target === this) closeEventModal();
-    });
 
     // ===== LOADING =====
     function showLoading() {
