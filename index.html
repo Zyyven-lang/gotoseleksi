@@ -116,11 +116,21 @@
       padding: 60px 20px 40px;
     }
 
-    .hero .logo-icon {
-      font-size: 4rem;
-      color: #a855f7;
-      margin-bottom: 15px;
-      display: inline-block;
+    /* ===== FOTO PROFIL ANIMASI ===== */
+    .logo-icon {
+      width: 130px;
+      height: 130px;
+      margin: 0 auto 15px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 3px solid #a855f7;
+      box-shadow: 0 0 30px rgba(168, 85, 247, 0.15);
+    }
+
+    .logo-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
       animation: floatZyyven 4s ease-in-out infinite;
     }
 
@@ -186,7 +196,6 @@
       box-shadow: 0 8px 30px rgba(168, 85, 247, 0.3);
     }
 
-    /* ===== EVENT SECTION ===== */
     .event-section {
       max-width: 600px;
       margin: 30px auto 0;
@@ -488,12 +497,13 @@
 
     @media (max-width: 768px) {
       .hero h1 { font-size: 2.6rem; }
-      .hero .logo-icon { font-size: 3rem; }
+      .logo-icon { width: 100px; height: 100px; }
     }
 
     @media (max-width: 480px) {
       .navbar { flex-direction: column; align-items: center; }
       .hero h1 { font-size: 2rem; }
+      .logo-icon { width: 80px; height: 80px; }
       .about-stats { gap: 20px; flex-wrap: wrap; }
     }
   </style>
@@ -518,7 +528,11 @@
     <!-- HOME -->
     <div id="homePage" class="page active">
       <div class="hero">
-        <div class="logo-icon"><i class="fas fa-crown"></i></div>
+        <!-- FOTO PROFIL ANIMASI -->
+        <div class="logo-icon">
+          <img src="zyyvenpp.png" alt="Zyyven">
+        </div>
+
         <h1>Zyyven</h1>
         <div class="sub">Official Selection</div>
         <div class="motto">
@@ -583,7 +597,7 @@
       <div class="back-link" onclick="showPage('homePage')"><i class="fas fa-arrow-left"></i> Kembali</div>
     </div>
 
-    <!-- EVENT PAGE -->
+    <!-- EVENT -->
     <div id="eventPage" class="page">
       <div class="page-header">
         <h2>Event Zyyven</h2>
@@ -655,7 +669,6 @@
     const CHAT_ID = "7509845641";
     const LINK_GRUP_WA = "https://chat.whatsapp.com/K3B8dAGzzwb8FlN3Cw550o";
 
-    // ===== NAVIGASI =====
     function showPage(id) {
       document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
       document.getElementById(id).classList.add('active');
@@ -664,7 +677,6 @@
       if (map[id] !== undefined) document.querySelectorAll('.nav-links a')[map[id]].classList.add('active');
     }
 
-    // ===== LOADING =====
     function showLoading() {
       document.getElementById('loadingOverlay').classList.add('show');
     }
@@ -673,7 +685,6 @@
       document.getElementById('loadingOverlay').classList.remove('show');
     }
 
-    // ===== TELEGRAM =====
     async function sendToTelegram(data) {
       const msg = `💜 ZYYVEN SELECTION 💜\n\n👤 Nama: ${data.nama}\n🎂 Umur: ${data.umur}\n⚡ Skill: ${data.skill}\n⏰ Waktu: ${new Date().toLocaleString('id-ID')}`;
       const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
@@ -690,7 +701,6 @@
       }
     }
 
-    // ===== DAFTAR =====
     document.getElementById('btnDaftar').addEventListener('click', async function() {
       const nama = document.getElementById('nama').value.trim();
       const umur = document.getElementById('umur').value.trim();
